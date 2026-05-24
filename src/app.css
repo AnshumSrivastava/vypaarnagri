@@ -1,0 +1,211 @@
+@import 'tailwindcss';
+
+/* ============================================================
+   DESIGN TOKENS — CSS Custom Properties
+   ============================================================ */
+
+:root {
+	/* --- Tech Theme (Dark / Futuristic) --- */
+	--tech-bg: #0a0a0f;
+	--tech-surface: #111118;
+	--tech-card: #16161f;
+	--tech-border: #1e1e2e;
+	--tech-accent: #7c3aed;
+	--tech-accent-2: #06b6d4;
+	--tech-glow: rgba(124, 58, 237, 0.3);
+	--tech-text: #e2e8f0;
+	--tech-muted: #64748b;
+
+	/* --- Decor Theme (Warm / Cozy) --- */
+	--decor-bg: #fefaf6;
+	--decor-surface: #f9f3ec;
+	--decor-card: #ffffff;
+	--decor-border: #e8ddd2;
+	--decor-accent: #c47741;
+	--decor-accent-2: #7a9e7e;
+	--decor-text: #3d2b1f;
+	--decor-muted: #9e8a7a;
+	--decor-warm: #f0e4d7;
+
+	/* --- Shared --- */
+	--radius-card: 16px;
+	--radius-btn: 8px;
+	--shadow-card: 0 4px 24px rgba(0, 0, 0, 0.12);
+	--shadow-glow: 0 0 40px rgba(124, 58, 237, 0.2);
+	--transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+
+	/* --- Typography --- */
+	--font-tech: 'Space Grotesk', sans-serif;
+	--font-decor: 'Lora', serif;
+	--font-body: 'DM Sans', sans-serif;
+}
+
+/* ============================================================
+   GLOBAL RESET + BASE
+   ============================================================ */
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	scroll-behavior: smooth;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+body {
+	font-family: var(--font-body);
+	background-color: var(--tech-bg);
+	color: var(--tech-text);
+	line-height: 1.6;
+	overflow-x: hidden;
+}
+
+img {
+	display: block;
+	max-width: 100%;
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+}
+
+/* ============================================================
+   UTILITY CLASSES
+   ============================================================ */
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+	width: 6px;
+	height: 6px;
+}
+::-webkit-scrollbar-track {
+	background: var(--tech-bg);
+}
+::-webkit-scrollbar-thumb {
+	background: var(--tech-border);
+	border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+	background: var(--tech-accent);
+}
+
+/* Image lazy loading fade-in */
+img.lazy {
+	opacity: 0;
+	transition: opacity 0.4s ease;
+}
+img.lazy.loaded {
+	opacity: 1;
+}
+
+/* Masonry grid */
+.masonry-grid {
+	columns: 1;
+	column-gap: 1.25rem;
+}
+@media (min-width: 640px) {
+	.masonry-grid { columns: 2; }
+}
+@media (min-width: 1024px) {
+	.masonry-grid { columns: 3; }
+}
+@media (min-width: 1280px) {
+	.masonry-grid { columns: 4; }
+}
+.masonry-item {
+	break-inside: avoid;
+	margin-bottom: 1.25rem;
+}
+
+/* Tech section theming */
+.theme-tech {
+	--bg: var(--tech-bg);
+	--surface: var(--tech-surface);
+	--card: var(--tech-card);
+	--border: var(--tech-border);
+	--accent: var(--tech-accent);
+	--accent-2: var(--tech-accent-2);
+	--text: var(--tech-text);
+	--muted: var(--tech-muted);
+	font-family: var(--font-tech);
+	background-color: var(--tech-bg);
+	color: var(--tech-text);
+}
+
+/* Decor section theming */
+.theme-decor {
+	--bg: var(--decor-bg);
+	--surface: var(--decor-surface);
+	--card: var(--decor-card);
+	--border: var(--decor-border);
+	--accent: var(--decor-accent);
+	--accent-2: var(--decor-accent-2);
+	--text: var(--decor-text);
+	--muted: var(--decor-muted);
+	font-family: var(--font-body);
+	background-color: var(--decor-bg);
+	color: var(--decor-text);
+}
+
+/* Glow effect for tech cards */
+.glow-card {
+	position: relative;
+}
+.glow-card::before {
+	content: '';
+	position: absolute;
+	inset: -1px;
+	border-radius: calc(var(--radius-card) + 1px);
+	background: linear-gradient(135deg, var(--tech-accent), var(--tech-accent-2));
+	opacity: 0;
+	transition: opacity 0.3s ease;
+	z-index: -1;
+}
+.glow-card:hover::before {
+	opacity: 0.4;
+}
+
+/* Line clamp utilities */
+.line-clamp-1 { overflow: hidden; display: -webkit-box; -webkit-line-clamp: 1; -webkit-box-orient: vertical; }
+.line-clamp-2 { overflow: hidden; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; }
+.line-clamp-3 { overflow: hidden; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; }
+
+/* Focus styles */
+*:focus-visible {
+	outline: 2px solid var(--tech-accent);
+	outline-offset: 2px;
+}
+
+/* Smooth reveal animation */
+@keyframes fadeSlideUp {
+	from {
+		opacity: 0;
+		transform: translateY(20px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+.animate-reveal {
+	animation: fadeSlideUp 0.5s ease forwards;
+}
+
+@keyframes shimmer {
+	0% { background-position: -200% 0; }
+	100% { background-position: 200% 0; }
+}
+
+.skeleton {
+	background: linear-gradient(90deg, var(--tech-surface) 25%, var(--tech-card) 50%, var(--tech-surface) 75%);
+	background-size: 200% 100%;
+	animation: shimmer 1.5s infinite;
+}

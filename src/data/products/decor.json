@@ -1,0 +1,205 @@
+[
+  {
+    "id": "minimal-desk-lamp",
+    "title": "HEKTAR Desk Lamp — IKEA",
+    "category": "decor",
+    "subcategory": "lighting",
+    "images": [
+      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&q=80",
+      "https://images.unsplash.com/photo-1513506003901-1e6a35087a9e?w=800&q=80",
+      "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=800&q=80"
+    ],
+    "description": "Warm amber light that turns any corner into a sanctuary. Simple, architectural, endlessly versatile.",
+    "affiliateLinks": [
+      { "label": "IKEA", "url": "https://www.ikea.com/us/en/search/?q=desk+lamp" },
+      { "label": "Amazon", "url": "https://www.amazon.com/s?k=minimal+desk+lamp+warm" }
+    ],
+    "tags": ["lamp", "desk", "warm", "minimal", "cozy", "lighting"],
+    "featured": true,
+    "price": "$39"
+  },
+  {
+    "id": "boho-throw-blanket",
+    "title": "Chunky Knit Throw Blanket",
+    "category": "decor",
+    "subcategory": "textiles",
+    "images": [
+      "https://images.unsplash.com/photo-1544819667-9bfc1de23d4e?w=800&q=80",
+      "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=800&q=80",
+      "https://images.unsplash.com/photo-1558908539-03dce5f21fda?w=800&q=80"
+    ],
+    "description": "Hand-woven merino wool chunky knit. Layer it on your sofa, drape it on a chair — it makes every space warmer.",
+    "affiliateLinks": [
+      { "label": "Amazon", "url": "https://www.amazon.com/s?k=chunky+knit+throw+blanket" },
+      { "label": "Etsy", "url": "https://www.etsy.com/search?q=chunky+knit+blanket" }
+    ],
+    "tags": ["blanket", "knit", "cozy", "boho", "bedroom", "sofa"],
+    "featured": true,
+    "price": "$89"
+  },
+  {
+    "id": "ceramic-vase-set",
+    "title": "Handmade Ceramic Vase Trio",
+    "category": "decor",
+    "subcategory": "decorative",
+    "images": [
+      "https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?w=800&q=80",
+      "https://images.unsplash.com/photo-1612198790700-bc2e44c44b96?w=800&q=80",
+      "https://images.unsplash.com/photo-1481449885308-13a1463c2e22?w=800&q=80"
+    ],
+    "description": "Organic shapes, matte clay finishes. A trio of handmade ceramics that bring earthy grounding to any shelf.",
+    "affiliateLinks": [
+      { "label": "Etsy", "url": "https://www.etsy.com/search?q=handmade+ceramic+vase" },
+      { "label": "Amazon", "url": "https://www.amazon.com/s?k=ceramic+vase+set+matte" }
+    ],
+    "tags": ["vase", "ceramic", "earthy", "shelf", "handmade", "decor"],
+    "featured": true,
+    "price": "$64"
+  },
+  {
+    "id": "rattan-pendant-light",
+    "title": "Boho Rattan Pendant Light",
+    "category": "decor",
+    "subcategory": "lighting",
+    "images": [
+      "https://images.unsplash.com/photo-1540932239986-30128078f3c5?w=800&q=80",
+      "https://images.unsplash.com/photo-1524484485831-a92ffc0de03f?w=800&q=80"
+    ],
+    "description": "Natural rattan weave that casts the most beautiful golden light patterns. A centrepiece that transforms a room.",
+    "affiliateLinks": [
+      { "label": "Amazon", "url": "https://www.amazon.com/s?k=rattan+pendant+light+boho" },
+      { "label": "Wayfair", "url": "https://www.wayfair.com/keyword.php?keyword=rattan+pendant+light" }
+    ],
+    "tags": ["pendant", "rattan", "boho", "lighting", "ceiling", "warm"],
+    "featured": false,
+    "price": "$79"
+  },
+  {
+    "id": "linen-throw-pillows",
+    "title": "Stonewashed Linen Pillow Covers",
+    "category": "decor",
+    "subcategory": "textiles",
+    "images": [
+      "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80",
+      "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=800&q=80",
+      "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=800&q=80"
+    ],
+    "description": "Pre-washed Belgian linen. Soft, breathable, effortlessly elegant in sage, sand, and cream colourways.",
+    "affiliateLinks": [
+      { "label": "Amazon", "url": "https://www.amazon.com/s?k=stonewashed+linen+pillow+covers" },
+      { "label": "Etsy", "url": "https://www.etsy.com/search?q=linen+pillow+cover" }
+    ],
+    "tags": ["pillow", "linen", "bedroom", "sofa", "cozy", "neutral"],
+    "featured": true,
+    "price": "$49"
+  },
+  {
+    "id": "scented-candle-set",
+    "title": "Soy Wax Scented Candle Set",
+    "category": "decor",
+    "subcategory": "scent",
+    "images": [
+      "https://images.unsplash.com/photo-1602143407151-7111542de6e8?w=800&q=80",
+      "https://images.unsplash.com/photo-1544819667-9bfc1de23d4e?w=800&q=80"
+    ],
+    "description": "Cedar, sandalwood and vanilla. Hand-poured soy wax in amber glass vessels. Burn time: 60 hours per candle.",
+    "affiliateLinks": [
+      { "label": "Amazon", "url": "https://www.amazon.com/s?k=soy+wax+scented+candle+set+amber" },
+      { "label": "Etsy", "url": "https://www.etsy.com/search?q=soy+candle+set" }
+    ],
+    "tags": ["candle", "scented", "soy", "cozy", "amber", "bedroom"],
+    "featured": true,
+    "price": "$49"
+  },
+  {
+    "id": "monstera-planter",
+    "title": "Terracotta Plant Pot with Saucer",
+    "category": "decor",
+    "subcategory": "plants",
+    "images": [
+      "https://images.unsplash.com/photo-1485955900006-10f4d324d411?w=800&q=80",
+      "https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=800&q=80",
+      "https://images.unsplash.com/photo-1509423350716-97f9360b4e09?w=800&q=80"
+    ],
+    "description": "Unglazed terracotta with drainage hole and matching saucer. Perfect for Monsteras, Pothos, and Snake plants.",
+    "affiliateLinks": [
+      { "label": "Amazon", "url": "https://www.amazon.com/s?k=terracotta+plant+pot+saucer" },
+      { "label": "Target", "url": "https://www.target.com/s?searchTerm=terracotta+plant+pot" }
+    ],
+    "tags": ["planter", "terracotta", "plants", "indoor", "earthy", "decor"],
+    "featured": false,
+    "price": "$29"
+  },
+  {
+    "id": "macrame-wall-art",
+    "title": "Boho Macramé Wall Hanging",
+    "category": "decor",
+    "subcategory": "wall-art",
+    "images": [
+      "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80",
+      "https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?w=800&q=80"
+    ],
+    "description": "Hand-knotted cotton rope macramé. Natural, imperfect, and beautiful — the way a home should feel.",
+    "affiliateLinks": [
+      { "label": "Etsy", "url": "https://www.etsy.com/search?q=macrame+wall+hanging" },
+      { "label": "Amazon", "url": "https://www.amazon.com/s?k=macrame+wall+hanging+boho" }
+    ],
+    "tags": ["macrame", "wall-art", "boho", "handmade", "cotton", "bedroom"],
+    "featured": false,
+    "price": "$59"
+  },
+  {
+    "id": "japandi-coffee-table",
+    "title": "Low Japandi Solid Wood Coffee Table",
+    "category": "decor",
+    "subcategory": "furniture",
+    "images": [
+      "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=800&q=80",
+      "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=800&q=80"
+    ],
+    "description": "White oak with subtle curves and walnut accents. Low profile, minimalist, and grounding. The Japanese-Scandi aesthetic made real.",
+    "affiliateLinks": [
+      { "label": "Amazon", "url": "https://www.amazon.com/s?k=japandi+coffee+table+low" },
+      { "label": "Wayfair", "url": "https://www.wayfair.com/keyword.php?keyword=japandi+coffee+table" }
+    ],
+    "tags": ["coffee-table", "japandi", "wood", "minimal", "living-room", "oak"],
+    "featured": true,
+    "price": "$329"
+  },
+  {
+    "id": "amber-glass-vase",
+    "title": "Vintage Amber Glass Bud Vase",
+    "category": "decor",
+    "subcategory": "decorative",
+    "images": [
+      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&q=80",
+      "https://images.unsplash.com/photo-1481449885308-13a1463c2e22?w=800&q=80"
+    ],
+    "description": "Warm amber tones catch morning light beautifully. Fill with dried pampas, eucalyptus, or a single stem rose.",
+    "affiliateLinks": [
+      { "label": "Amazon", "url": "https://www.amazon.com/s?k=amber+glass+bud+vase" },
+      { "label": "Etsy", "url": "https://www.etsy.com/search?q=amber+glass+vase+vintage" }
+    ],
+    "tags": ["vase", "amber", "glass", "vintage", "dried-flowers", "warm"],
+    "featured": false,
+    "price": "$29"
+  },
+  {
+    "id": "wabi-sabi-wall-art",
+    "title": "Abstract Wabi-Sabi Canvas Print",
+    "category": "decor",
+    "subcategory": "wall-art",
+    "images": [
+      "https://images.unsplash.com/photo-1541961017774-22349e4a1262?w=800&q=80",
+      "https://images.unsplash.com/photo-1578301978693-85fa9c0320b9?w=800&q=80"
+    ],
+    "description": "Warm ochre, terracotta and cream tones. Gallery-wrapped canvas, ready to hang. Art that breathes warmth into a room.",
+    "affiliateLinks": [
+      { "label": "Amazon", "url": "https://www.amazon.com/s?k=wabi+sabi+abstract+canvas+print" },
+      { "label": "Etsy", "url": "https://www.etsy.com/search?q=wabi+sabi+wall+art" }
+    ],
+    "tags": ["wall-art", "canvas", "abstract", "wabi-sabi", "warm", "gallery"],
+    "featured": true,
+    "price": "$79"
+  }
+]

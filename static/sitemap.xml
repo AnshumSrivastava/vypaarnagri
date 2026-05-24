@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+
+  <!-- Main Pages -->
+  <url>
+    <loc>https://vypaarnagri.com/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://vypaarnagri.com/tech</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://vypaarnagri.com/decor</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Tech Collections -->
+  <url>
+    <loc>https://vypaarnagri.com/collections/minimal-creator-setup</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1593642632559-0c6d3fc62b89?w=1200&amp;q=80</image:loc>
+      <image:title>Minimal Creator Setup</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://vypaarnagri.com/collections/podcast-streaming-rig</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?w=1200&amp;q=80</image:loc>
+      <image:title>Podcast &amp; Streaming Rig</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://vypaarnagri.com/collections/ergonomic-productivity-desk</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://vypaarnagri.com/collections/4k-creative-workstation</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Decor Collections -->
+  <url>
+    <loc>https://vypaarnagri.com/collections/cozy-bedroom-sanctuary</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=1200&amp;q=80</image:loc>
+      <image:title>Cozy Bedroom Sanctuary</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://vypaarnagri.com/collections/warm-living-room-vibes</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=1200&amp;q=80</image:loc>
+      <image:title>Warm Living Room Vibes</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://vypaarnagri.com/collections/earthy-shelf-styling</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://vypaarnagri.com/collections/boho-gallery-wall</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+</urlset>

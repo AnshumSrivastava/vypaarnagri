@@ -1,0 +1,38 @@
+[
+  {
+    "title": "Minimal Creator Setup",
+    "slug": "minimal-creator-setup",
+    "category": "tech",
+    "description": "A curated workspace for deep-focus creators. Clean lines, premium peripherals, zero clutter.",
+    "coverImage": "https://images.unsplash.com/photo-1593642632559-0c6d3fc62b89?w=1200&q=80",
+    "products": ["keychron-q1-pro", "logitech-mx-master-3s", "benq-screenbar-halo", "apple-macbook-stand", "anker-usb-c-hub"],
+    "featured": true
+  },
+  {
+    "title": "Podcast & Streaming Rig",
+    "slug": "podcast-streaming-rig",
+    "category": "tech",
+    "description": "Go live, record, and create content with professional-grade gear at every budget.",
+    "coverImage": "https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?w=1200&q=80",
+    "products": ["rode-nt-usb-mini", "elgato-stream-deck", "sony-wh1000xm5", "benq-screenbar-halo"],
+    "featured": true
+  },
+  {
+    "title": "Ergonomic Productivity Desk",
+    "slug": "ergonomic-productivity-desk",
+    "category": "tech",
+    "description": "Stand, sit, and work comfortably for hours. Your body deserves the same investment as your tools.",
+    "coverImage": "https://images.unsplash.com/photo-1625134673337-519d4d10b313?w=1200&q=80",
+    "products": ["flexispot-e7-desk", "secretlab-titan-chair", "logitech-mx-master-3s", "anker-usb-c-hub", "benq-screenbar-halo"],
+    "featured": false
+  },
+  {
+    "title": "4K Creative Workstation",
+    "slug": "4k-creative-workstation",
+    "category": "tech",
+    "description": "Where design, video editing, and creative work happen. Every detail matters.",
+    "coverImage": "https://images.unsplash.com/photo-1547082299-de196ea013d6?w=1200&q=80",
+    "products": ["dell-ultrasharp-monitor", "keychron-q1-pro", "logitech-mx-master-3s", "apple-macbook-stand", "sony-wh1000xm5"],
+    "featured": true
+  }
+]

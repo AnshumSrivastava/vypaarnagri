@@ -1,5 +1,6 @@
 <script>
 	import MasonryGrid from '$lib/components/MasonryGrid.svelte';
+	import { base } from '$app/paths';
 
 	let { data } = $props();
 
@@ -38,9 +39,9 @@
 
 		<div class="hero-content">
 			<div class="breadcrumb">
-				<a href="/" class="breadcrumb-link">Home</a>
+				<a href="{base}/" class="breadcrumb-link">Home</a>
 				<span class="breadcrumb-sep">›</span>
-				<a href="/{collection.category}" class="breadcrumb-link capitalize">{collection.category}</a>
+				<a href="{base}/{collection.category}" class="breadcrumb-link capitalize">{collection.category}</a>
 				<span class="breadcrumb-sep">›</span>
 				<span class="breadcrumb-current">{collection.title}</span>
 			</div>
@@ -114,7 +115,7 @@
 	<!-- Back nav -->
 	<div class="back-nav">
 		<div class="container">
-			<a href="/{collection.category}" class="back-link">
+			<a href="{base}/{collection.category}" class="back-link">
 				<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="back-icon">
 					<path d="m15 18-6-6 6-6" />
 				</svg>

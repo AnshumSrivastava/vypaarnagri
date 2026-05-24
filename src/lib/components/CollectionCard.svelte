@@ -1,4 +1,5 @@
 <script>
+	import { base } from '$app/paths';
 	let { collection, theme = 'tech' } = $props();
 
 	const isTech = $derived(theme === 'tech');
@@ -6,7 +7,7 @@
 </script>
 
 <a
-	href="/collections/{collection.slug}"
+	href="{base}/collections/{collection.slug}"
 	class="collection-card {isTech ? 'card-tech' : 'card-decor'}"
 	aria-label="View {collection.title} collection"
 >

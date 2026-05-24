@@ -7,6 +7,7 @@
 	import FilterSidebar from '$lib/components/FilterSidebar.svelte';
 	import MasonryGrid from '$lib/components/MasonryGrid.svelte';
 	import { onMount, onDestroy } from 'svelte';
+	import { base } from '$app/paths';
 
 	const allProducts = getProductsByCategory('decor');
 	const collections = getCollectionsByCategory('decor');
@@ -75,7 +76,7 @@
 				</div>
 			</div>
 
-			<div class="products-layout">
+			<div class="products-layout {sidebarOpen ? 'has-sidebar' : ''}">
 				{#if sidebarOpen}
 					<aside class="sidebar-wrap">
 						<FilterSidebar products={allProducts} theme="decor" />
@@ -182,9 +183,12 @@
 	}
 
 	@media (min-width: 900px) {
-		.products-layout {
+		.products-layout.has-sidebar {
 			grid-template-columns: 240px 1fr;
 			align-items: start;
+		}
+		.products-layout:not(.has-sidebar) {
+			grid-template-columns: 1fr;
 		}
 	}
 

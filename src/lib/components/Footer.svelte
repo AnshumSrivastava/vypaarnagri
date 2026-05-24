@@ -1,17 +1,19 @@
 <script>
+	import { base } from '$app/paths';
+
 	const currentYear = new Date().getFullYear();
 
 	const links = {
 		explore: [
-			{ href: '/', label: 'Home' },
-			{ href: '/tech', label: 'Tech Setups' },
-			{ href: '/decor', label: 'Home Decor' }
+			{ href: `${base}/`, label: 'Home' },
+			{ href: `${base}/tech`, label: 'Tech Setups' },
+			{ href: `${base}/decor`, label: 'Home Decor' }
 		],
 		collections: [
-			{ href: '/collections/minimal-creator-setup', label: 'Minimal Creator Setup' },
-			{ href: '/collections/cozy-bedroom-sanctuary', label: 'Cozy Bedroom' },
-			{ href: '/collections/podcast-streaming-rig', label: 'Podcast Rig' },
-			{ href: '/collections/warm-living-room-vibes', label: 'Warm Living Room' }
+			{ href: `${base}/collections/minimal-creator-setup`, label: 'Minimal Creator Setup' },
+			{ href: `${base}/collections/cozy-bedroom-sanctuary`, label: 'Cozy Bedroom' },
+			{ href: `${base}/collections/podcast-streaming-rig`, label: 'Podcast Rig' },
+			{ href: `${base}/collections/warm-living-room-vibes`, label: 'Warm Living Room' }
 		]
 	};
 </script>
@@ -19,7 +21,7 @@
 <footer class="footer">
 	<div class="footer-inner">
 		<div class="footer-brand">
-			<a href="/" class="footer-logo">
+			<a href="{base}/" class="footer-logo">
 				<span class="logo-icon">◈</span>
 				<span>Vypaa<span class="accent">Nagri</span></span>
 			</a>

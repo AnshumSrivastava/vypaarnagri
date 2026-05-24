@@ -1,5 +1,6 @@
 <script>
 	import { page } from '$app/stores';
+	import { base } from '$app/paths';
 </script>
 
 <svelte:head>
@@ -15,9 +16,9 @@
 			This collection or page doesn't exist yet. Explore our curated categories instead.
 		</p>
 		<div class="nf-links">
-			<a href="/" class="nf-btn-primary">← Back to Home</a>
-			<a href="/tech" class="nf-btn-secondary">Tech Setups</a>
-			<a href="/decor" class="nf-btn-secondary">Home Decor</a>
+			<a href="{base}/" class="nf-btn-primary">← Back to Home</a>
+			<a href="{base}/tech" class="nf-btn-secondary">Tech Setups</a>
+			<a href="{base}/decor" class="nf-btn-secondary">Home Decor</a>
 		</div>
 	</div>
 </div>

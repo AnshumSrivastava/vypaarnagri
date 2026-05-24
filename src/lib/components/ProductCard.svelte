@@ -1,4 +1,5 @@
 <script>
+	import { base } from '$app/paths';
 	import ImageCarousel from './ImageCarousel.svelte';
 
 	let { product, theme = 'tech' } = $props();
@@ -22,9 +23,11 @@
 	<!-- Image Section -->
 	<div class="card-image-wrap">
 		{#if product.images.length > 1}
-			<ImageCarousel images={product.images} alt={product.title} bind:currentImage />
+			<a href="{base}/products/{product.id}" class="img-link" aria-label="View {product.title} details">
+				<ImageCarousel images={product.images} alt={product.title} bind:currentImage />
+			</a>
 		{:else}
-			<div class="single-image">
+			<a href="{base}/products/{product.id}" class="img-link single-image" aria-label="View {product.title} details">
 				<img
 					src={product.images[0]}
 					alt={product.title}
@@ -32,7 +35,7 @@
 					class="card-img"
 					onerror={(e) => { e.currentTarget.src = 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=800&q=80'; }}
 				/>
-			</div>
+			</a>
 		{/if}
 
 		<!-- Tags overlay -->
@@ -48,11 +51,13 @@
 	<div class="card-body">
 		<div class="card-meta">
 			{#each product.tags.slice(0, 3) as tag}
-				<a href="/search?q={tag}" class="tag-chip">#{tag}</a>
+				<a href="{base}/search?q={tag}" class="tag-chip">#{tag}</a>
 			{/each}
 		</div>
 
-		<h2 class="card-title" itemprop="name">{product.title}</h2>
+		<h2 class="card-title" itemprop="name">
+			<a href="{base}/products/{product.id}" class="title-link">{product.title}</a>
+		</h2>
 		<p class="card-desc" itemprop="description">{product.description}</p>
 
 		{#if product.price}
@@ -326,5 +331,26 @@
 		width: 12px;
 		height: 12px;
 		flex-shrink: 0;
+	}
+
+	.img-link {
+		display: block;
+		width: 100%;
+		height: 100%;
+		text-decoration: none;
+	}
+
+	.title-link {
+		color: inherit;
+		text-decoration: none;
+		transition: color 0.2s ease;
+	}
+
+	.title-link:hover {
+		color: #a78bfa;
+	}
+
+	.card-decor .title-link:hover {
+		color: #c47741;
 	}
 </style>

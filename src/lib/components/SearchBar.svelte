@@ -1,6 +1,7 @@
 <script>
 	import { searchQuery } from '$lib/stores/filters.js';
 	import { goto } from '$app/navigation';
+	import { base } from '$app/paths';
 
 	let { placeholder = 'Search products, tags, setups...', navigateOnEnter = false, theme = 'tech' } = $props();
 
@@ -16,7 +17,7 @@
 	function handleKeydown(e) {
 		if (e.key === 'Enter') {
 			if (navigateOnEnter && localValue.trim()) {
-				goto(`/search?q=${encodeURIComponent(localValue.trim())}`);
+				goto(`${base}/search?q=${encodeURIComponent(localValue.trim())}`);
 			} else {
 				searchQuery.set(localValue);
 			}

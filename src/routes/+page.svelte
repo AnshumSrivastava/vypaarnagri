@@ -3,6 +3,7 @@
 	import HeroSection from '$lib/components/HeroSection.svelte';
 	import FeaturedSection from '$lib/components/FeaturedSection.svelte';
 	import ProductGallery from '$lib/components/ProductGallery.svelte';
+	import { base } from '$app/paths';
 
 	const featuredCollections = getFeaturedCollections(8);
 	const techCollections = featuredCollections.filter((c) => c.category === 'tech');
@@ -42,7 +43,7 @@
 
 		<div class="niche-cards">
 			<!-- Tech niche card -->
-			<a href="/tech" class="niche-card niche-tech" aria-label="Explore Tech Setups">
+			<a href="{base}/tech" class="niche-card niche-tech" aria-label="Explore Tech Setups">
 				<div class="niche-icon">⚡</div>
 				<div class="niche-info">
 					<h2 class="niche-title">Tech Setups</h2>
@@ -54,7 +55,7 @@
 			</a>
 
 			<!-- Decor niche card -->
-			<a href="/decor" class="niche-card niche-decor" aria-label="Explore Home Decor">
+			<a href="{base}/decor" class="niche-card niche-decor" aria-label="Explore Home Decor">
 				<div class="niche-icon">🏡</div>
 				<div class="niche-info">
 					<h2 class="niche-title">Home Decor</h2>
@@ -78,7 +79,7 @@
 			theme="tech"
 		/>
 		<div class="view-all-wrap">
-			<a href="/tech" class="view-all-btn view-all-tech">View all Tech Collections →</a>
+			<a href="{base}/tech" class="view-all-btn view-all-tech">View all Tech Collections →</a>
 		</div>
 	</div>
 </section>
@@ -93,7 +94,7 @@
 			theme="decor"
 		/>
 		<div class="view-all-wrap">
-			<a href="/decor" class="view-all-btn view-all-decor">View all Decor Collections →</a>
+			<a href="{base}/decor" class="view-all-btn view-all-decor">View all Decor Collections →</a>
 		</div>
 	</div>
 </section>
@@ -117,8 +118,8 @@
 		<h2 class="cta-headline">Ready to Build Your Dream Setup?</h2>
 		<p class="cta-sub">Browse curated collections and discover products that spark inspiration.</p>
 		<div class="cta-btns">
-			<a href="/tech" class="cta-btn-primary">Explore Tech</a>
-			<a href="/decor" class="cta-btn-secondary">Explore Decor</a>
+			<a href="{base}/tech" class="cta-btn-primary">Explore Tech</a>
+			<a href="{base}/decor" class="cta-btn-secondary">Explore Decor</a>
 		</div>
 	</div>
 </section>

@@ -28,11 +28,11 @@
 		.masonry-grid { columns: 2; }
 	}
 
-	@media (min-width: 900px) {
+	@media (min-width: 1024px) {
 		.masonry-grid { columns: 3; }
 	}
 
-	@media (min-width: 1280px) {
+	@media (min-width: 1600px) {
 		.masonry-grid { columns: 4; }
 	}
 

@@ -1,28 +1,37 @@
 <script>
 	import { page } from '$app/stores';
 	import { goto } from '$app/navigation';
+	import { base } from '$app/paths';
 
 	let mobileMenuOpen = $state(false);
 	let searchValue = $state('');
 
 	function handleSearch(e) {
 		if (e.key === 'Enter' && searchValue.trim()) {
-			goto(`/search?q=${encodeURIComponent(searchValue.trim())}`);
+			goto(`${base}/search?q=${encodeURIComponent(searchValue.trim())}`);
 			searchValue = '';
 		}
 	}
 
 	const navLinks = [
-		{ href: '/', label: 'Home' },
-		{ href: '/tech', label: 'Tech Setups' },
-		{ href: '/decor', label: 'Home Decor' }
+		{ href: `${base}/`, label: 'Home' },
+		{ href: `${base}/tech`, label: 'Tech Setups' },
+		{ href: `${base}/decor`, label: 'Home Decor' }
 	];
+
+	function isLinkActive(href) {
+		const path = $page.url.pathname;
+		if (href === `${base}/`) {
+			return path === base || path === `${base}/`;
+		}
+		return path === href || path === `${href}/`;
+	}
 </script>
 
 <nav class="navbar" aria-label="Main navigation">
 	<div class="navbar-inner">
 		<!-- Logo -->
-		<a href="/" class="navbar-logo" aria-label="VypaaNagri Home">
+		<a href="{base}/" class="navbar-logo" aria-label="VypaaNagri Home">
 			<span class="logo-icon">◈</span>
 			<span class="logo-text">Vypaa<span class="logo-accent">Nagri</span></span>
 		</a>
@@ -33,7 +42,7 @@
 				<li>
 					<a
 						href={link.href}
-						class="nav-link {$page.url.pathname === link.href ? 'active' : ''}"
+						class="nav-link {isLinkActive(link.href) ? 'active' : ''}"
 					>
 						{link.label}
 					</a>

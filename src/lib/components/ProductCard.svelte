@@ -2,7 +2,7 @@
 	import { base } from '$app/paths';
 	import ImageCarousel from './ImageCarousel.svelte';
 
-	let { product, theme = 'tech' } = $props();
+	let { product, theme = 'decor' } = $props();
 
 	let currentImage = $state(0);
 
@@ -11,12 +11,10 @@
 	function getCTA(index) {
 		return ctaLabels[index % ctaLabels.length];
 	}
-
-	const isTech = $derived(theme === 'tech');
 </script>
 
 <article
-	class="product-card {isTech ? 'card-tech' : 'card-decor'}"
+	class="product-card"
 	itemscope
 	itemtype="https://schema.org/Product"
 >
@@ -40,7 +38,7 @@
 
 		<!-- Tags overlay -->
 		{#if product.featured}
-			<span class="featured-badge">Featured</span>
+			<span class="featured-badge">Featured Curation</span>
 		{/if}
 
 		<!-- Category pill -->
@@ -51,13 +49,14 @@
 	<div class="card-body">
 		<div class="card-meta">
 			{#each product.tags.slice(0, 3) as tag}
-				<a href="{base}/search?q={tag}" class="tag-chip">#{tag}</a>
+				<a href="{base}/?q={tag}" class="tag-chip">#{tag}</a>
 			{/each}
 		</div>
 
 		<h2 class="card-title" itemprop="name">
 			<a href="{base}/products/{product.id}" class="title-link">{product.title}</a>
 		</h2>
+		
 		<p class="card-desc" itemprop="description">{product.description}</p>
 
 		{#if product.price}
@@ -88,38 +87,19 @@
 
 <style>
 	.product-card {
-		border-radius: 16px;
+		border-radius: var(--radius-card);
 		overflow: hidden;
-		transition: transform 0.3s ease, box-shadow 0.3s ease;
+		transition: var(--transition);
 		position: relative;
+		background: var(--decor-card);
+		border: 1px solid var(--decor-border);
+		box-shadow: var(--shadow-card);
 	}
 
 	.product-card:hover {
 		transform: translateY(-4px);
-	}
-
-	/* Tech dark card */
-	.card-tech {
-		background: #16161f;
-		border: 1px solid #1e1e2e;
-		box-shadow: 0 4px 24px rgba(0, 0, 0, 0.3);
-	}
-
-	.card-tech:hover {
-		box-shadow: 0 12px 40px rgba(124, 58, 237, 0.2);
-		border-color: rgba(124, 58, 237, 0.4);
-	}
-
-	/* Decor warm card */
-	.card-decor {
-		background: #ffffff;
-		border: 1px solid #e8ddd2;
-		box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
-	}
-
-	.card-decor:hover {
-		box-shadow: 0 12px 40px rgba(196, 119, 65, 0.15);
-		border-color: rgba(196, 119, 65, 0.4);
+		box-shadow: var(--shadow-hover);
+		border-color: rgba(196, 119, 65, 0.25);
 	}
 
 	/* Image area */
@@ -128,6 +108,7 @@
 		width: 100%;
 		aspect-ratio: 4/3;
 		overflow: hidden;
+		background: var(--decor-surface);
 	}
 
 	.single-image {
@@ -143,7 +124,7 @@
 	}
 
 	.product-card:hover .card-img {
-		transform: scale(1.04);
+		transform: scale(1.03);
 	}
 
 	/* Badges */
@@ -151,7 +132,7 @@
 		position: absolute;
 		top: 0.75rem;
 		left: 0.75rem;
-		background: linear-gradient(135deg, #7c3aed, #06b6d4);
+		background: linear-gradient(135deg, var(--decor-accent), #7a9e7e);
 		color: white;
 		font-size: 0.65rem;
 		font-weight: 700;
@@ -160,21 +141,19 @@
 		padding: 0.2rem 0.5rem;
 		border-radius: 4px;
 		z-index: 10;
-	}
-
-	.card-decor .featured-badge {
-		background: linear-gradient(135deg, #c47741, #7a9e7e);
+		box-shadow: 0 2px 6px rgba(196, 119, 65, 0.2);
 	}
 
 	.category-pill {
 		position: absolute;
 		top: 0.75rem;
 		right: 0.75rem;
-		background: rgba(0, 0, 0, 0.55);
+		background: rgba(254, 250, 246, 0.85);
 		backdrop-filter: blur(4px);
-		color: rgba(255, 255, 255, 0.85);
+		color: var(--decor-text);
+		border: 1px solid var(--decor-border);
 		font-size: 0.65rem;
-		font-weight: 500;
+		font-weight: 600;
 		text-transform: capitalize;
 		padding: 0.2rem 0.5rem;
 		border-radius: 4px;
@@ -183,10 +162,10 @@
 
 	/* Card body */
 	.card-body {
-		padding: 1.125rem;
+		padding: 1.25rem;
 		display: flex;
 		flex-direction: column;
-		gap: 0.625rem;
+		gap: 0.65rem;
 	}
 
 	.card-meta {
@@ -198,49 +177,44 @@
 	.tag-chip {
 		font-size: 0.7rem;
 		font-weight: 500;
-		color: #7c3aed;
-		background: rgba(124, 58, 237, 0.1);
+		color: var(--decor-accent);
+		background: rgba(196, 119, 65, 0.08);
 		padding: 0.15rem 0.5rem;
 		border-radius: 999px;
 		text-decoration: none;
-		transition: background 0.2s ease;
-		border: 1px solid rgba(124, 58, 237, 0.2);
-	}
-
-	.card-decor .tag-chip {
-		color: #c47741;
-		background: rgba(196, 119, 65, 0.1);
-		border-color: rgba(196, 119, 65, 0.2);
+		transition: var(--transition);
+		border: 1px solid rgba(196, 119, 65, 0.15);
 	}
 
 	.tag-chip:hover {
-		background: rgba(124, 58, 237, 0.2);
-	}
-
-	.card-decor .tag-chip:hover {
-		background: rgba(196, 119, 65, 0.2);
+		background: rgba(196, 119, 65, 0.16);
 	}
 
 	.card-title {
-		font-family: var(--font-tech);
-		font-size: 0.9375rem;
-		font-weight: 600;
+		font-family: var(--font-decor);
+		font-size: 0.95rem;
+		font-weight: 700;
 		line-height: 1.35;
-		color: #e2e8f0;
+		color: var(--decor-text);
 		overflow: hidden;
 		display: -webkit-box;
 		-webkit-line-clamp: 2;
 		-webkit-box-orient: vertical;
 	}
 
-	.card-decor .card-title {
-		font-family: var(--font-decor);
-		color: #3d2b1f;
+	.title-link {
+		color: inherit;
+		text-decoration: none;
+		transition: var(--transition);
+	}
+
+	.title-link:hover {
+		color: var(--decor-accent);
 	}
 
 	.card-desc {
 		font-size: 0.8125rem;
-		color: #64748b;
+		color: var(--decor-muted);
 		line-height: 1.55;
 		overflow: hidden;
 		display: -webkit-box;
@@ -248,18 +222,10 @@
 		-webkit-box-orient: vertical;
 	}
 
-	.card-decor .card-desc {
-		color: #9e8a7a;
-	}
-
 	.card-price {
-		font-size: 0.875rem;
+		font-size: 0.9375rem;
 		font-weight: 700;
-		color: #a78bfa;
-	}
-
-	.card-decor .card-price {
-		color: #c47741;
+		color: var(--decor-accent);
 	}
 
 	/* CTA Buttons */
@@ -274,62 +240,42 @@
 		display: inline-flex;
 		align-items: center;
 		gap: 0.375rem;
-		font-size: 0.8125rem;
-		font-weight: 600;
-		padding: 0.5rem 0.875rem;
-		border-radius: 8px;
+		font-size: 0.8rem;
+		font-weight: 700;
+		padding: 0.45rem 0.875rem;
+		border-radius: var(--radius-btn);
 		text-decoration: none;
-		transition: all 0.2s ease;
+		transition: var(--transition);
 		white-space: nowrap;
+		flex: 1;
+		justify-content: center;
 	}
 
 	.cta-primary {
-		background: linear-gradient(135deg, #7c3aed, #6d28d9);
+		background: linear-gradient(135deg, var(--decor-accent), #a86030);
 		color: white;
-		box-shadow: 0 2px 8px rgba(124, 58, 237, 0.35);
+		box-shadow: 0 2px 8px rgba(196, 119, 65, 0.2);
 	}
 
 	.cta-primary:hover {
-		background: linear-gradient(135deg, #6d28d9, #5b21b6);
-		box-shadow: 0 4px 16px rgba(124, 58, 237, 0.5);
+		box-shadow: 0 4px 16px rgba(196, 119, 65, 0.35);
 		transform: translateY(-1px);
 	}
 
-	.card-decor .cta-primary {
-		background: linear-gradient(135deg, #c47741, #a86030);
-		box-shadow: 0 2px 8px rgba(196, 119, 65, 0.35);
-	}
-
-	.card-decor .cta-primary:hover {
-		background: linear-gradient(135deg, #a86030, #8f5228);
-		box-shadow: 0 4px 16px rgba(196, 119, 65, 0.5);
-	}
-
 	.cta-secondary {
-		background: rgba(124, 58, 237, 0.08);
-		color: #a78bfa;
-		border: 1px solid rgba(124, 58, 237, 0.25);
+		background: rgba(196, 119, 65, 0.06);
+		color: var(--decor-accent);
+		border: 1px solid rgba(196, 119, 65, 0.2);
 	}
 
 	.cta-secondary:hover {
-		background: rgba(124, 58, 237, 0.15);
-		border-color: rgba(124, 58, 237, 0.5);
-	}
-
-	.card-decor .cta-secondary {
-		background: rgba(196, 119, 65, 0.08);
-		color: #c47741;
-		border-color: rgba(196, 119, 65, 0.25);
-	}
-
-	.card-decor .cta-secondary:hover {
-		background: rgba(196, 119, 65, 0.15);
-		border-color: rgba(196, 119, 65, 0.5);
+		background: rgba(196, 119, 65, 0.12);
+		border-color: rgba(196, 119, 65, 0.4);
 	}
 
 	.btn-icon {
-		width: 12px;
-		height: 12px;
+		width: 11px;
+		height: 11px;
 		flex-shrink: 0;
 	}
 
@@ -338,19 +284,5 @@
 		width: 100%;
 		height: 100%;
 		text-decoration: none;
-	}
-
-	.title-link {
-		color: inherit;
-		text-decoration: none;
-		transition: color 0.2s ease;
-	}
-
-	.title-link:hover {
-		color: #a78bfa;
-	}
-
-	.card-decor .title-link:hover {
-		color: #c47741;
 	}
 </style>

@@ -1,49 +1,43 @@
 /**
- * Data utilities for VypaaNagri
- * All data loading + filtering logic lives here.
- * Components stay clean — all business logic is centralized.
+ * Data utilities for VypaaNagri Decor Makeover
+ * Centralizes data loading, filtering, search, and dynamic resolver logic.
  */
 
-import techProducts from '../../data/products/tech.json';
 import decorProducts from '../../data/products/decor.json';
-import techCollections from '../../data/collections/tech.json';
 import decorCollections from '../../data/collections/decor.json';
+import blogs from '../../data/blogs.json';
+import comparisons from '../../data/comparisons.json';
 
-/** @returns {Array} All products combined */
+/** @returns {Array} All decor products */
 export function getAllProducts() {
-	return [...techProducts, ...decorProducts];
+	return decorProducts;
 }
 
-/** @param {'tech'|'decor'} category */
+/** @param {string} category ignored, returns all decor products */
 export function getProductsByCategory(category) {
-	return category === 'tech' ? techProducts : decorProducts;
+	return decorProducts;
 }
 
-/** @returns {Array} Featured products from all categories */
+/** @returns {Array} Featured products */
 export function getFeaturedProducts(limit = 8) {
-	return getAllProducts()
+	return decorProducts
 		.filter((p) => p.featured)
 		.slice(0, limit);
 }
 
 /** @param {string} id */
 export function getProductById(id) {
-	return getAllProducts().find((p) => p.id === id) ?? null;
+	return decorProducts.find((p) => p.id === id) ?? null;
 }
 
-/** @returns {Array} All collections combined */
+/** @returns {Array} All collections */
 export function getAllCollections() {
-	return [...techCollections, ...decorCollections];
-}
-
-/** @param {'tech'|'decor'} category */
-export function getCollectionsByCategory(category) {
-	return category === 'tech' ? techCollections : decorCollections;
+	return decorCollections;
 }
 
 /** @param {string} slug */
 export function getCollectionBySlug(slug) {
-	return getAllCollections().find((c) => c.slug === slug) ?? null;
+	return decorCollections.find((c) => c.slug === slug) ?? null;
 }
 
 /**
@@ -51,6 +45,7 @@ export function getCollectionBySlug(slug) {
  * @param {object} collection
  */
 export function resolveCollectionProducts(collection) {
+	if (!collection || !collection.products) return [];
 	return collection.products
 		.map((id) => getProductById(id))
 		.filter(Boolean);
@@ -62,12 +57,9 @@ export function resolveCollectionProducts(collection) {
  * @param {{ query: string, tags: string[], category: string, subcategory: string, featuredOnly: boolean }} filters
  */
 export function filterProducts(products, filters) {
-	const { query, tags, category, subcategory, featuredOnly } = filters;
+	const { query, tags, subcategory, featuredOnly } = filters;
 
 	return products.filter((p) => {
-		// Category filter
-		if (category && p.category !== category) return false;
-
 		// Subcategory filter
 		if (subcategory && p.subcategory !== subcategory) return false;
 
@@ -116,7 +108,45 @@ export function extractSubcategories(products) {
  * @param {number} limit
  */
 export function getFeaturedCollections(limit = 6) {
-	return getAllCollections()
+	return decorCollections
 		.filter((c) => c.featured)
 		.slice(0, limit);
+}
+
+/* ==========================================
+   BLOG SERVICES
+   ========================================== */
+
+/** @returns {Array} All blog articles */
+export function getAllBlogs() {
+	return blogs;
+}
+
+/** @param {string} slug */
+export function getBlogBySlug(slug) {
+	return blogs.find((b) => b.slug === slug) ?? null;
+}
+
+/** @returns {Array} Featured or latest blog articles */
+export function getFeaturedBlogs(limit = 3) {
+	return blogs.slice(0, limit);
+}
+
+/* ==========================================
+   COMPARISON SERVICES
+   ========================================== */
+
+/** @returns {Array} All product comparisons */
+export function getAllComparisons() {
+	return comparisons;
+}
+
+/** @param {string} slug */
+export function getComparisonBySlug(slug) {
+	return comparisons.find((c) => c.slug === slug) ?? null;
+}
+
+/** @returns {Array} Featured comparisons */
+export function getFeaturedComparisons(limit = 2) {
+	return comparisons.slice(0, limit);
 }

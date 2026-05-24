@@ -1,21 +1,21 @@
 <script>
 	import CollectionCard from './CollectionCard.svelte';
 
-	let { collections = [], title = 'Featured Collections', theme = 'tech' } = $props();
+	let { collections = [], title = 'Featured Collections', theme = 'decor' } = $props();
 </script>
 
 <section class="featured-section">
 	{#if title}
 		<div class="section-header">
-			<h2 class="section-title {theme === 'decor' ? 'title-decor' : 'title-tech'}">{title}</h2>
-			<div class="title-underline {theme === 'decor' ? 'underline-decor' : 'underline-tech'}"></div>
+			<h2 class="section-title">{title}</h2>
+			<div class="title-underline"></div>
 		</div>
 	{/if}
 
 	<div class="collections-grid">
 		{#each collections as collection, i}
 			<div class="grid-item" style="animation-delay: {i * 80}ms">
-				<CollectionCard {collection} {theme} />
+				<CollectionCard {collection} theme="decor" />
 			</div>
 		{/each}
 	</div>
@@ -25,43 +25,28 @@
 	.featured-section {
 		display: flex;
 		flex-direction: column;
-		gap: 2rem;
+		gap: 1.5rem;
 	}
 
 	.section-header {
 		display: flex;
 		flex-direction: column;
-		gap: 0.5rem;
+		gap: 0.35rem;
 	}
 
 	.section-title {
-		font-size: clamp(1.25rem, 3vw, 1.75rem);
-		font-weight: 700;
-		line-height: 1.2;
-	}
-
-	.title-tech {
-		font-family: var(--font-tech);
-		color: #e2e8f0;
-	}
-
-	.title-decor {
 		font-family: var(--font-decor);
-		color: #3d2b1f;
+		font-size: clamp(1.25rem, 3vw, 1.6rem);
+		font-weight: 700;
+		color: var(--decor-text);
+		line-height: 1.2;
 	}
 
 	.title-underline {
 		height: 3px;
-		width: 48px;
+		width: 36px;
 		border-radius: 2px;
-	}
-
-	.underline-tech {
-		background: linear-gradient(90deg, #7c3aed, #06b6d4);
-	}
-
-	.underline-decor {
-		background: linear-gradient(90deg, #c47741, #7a9e7e);
+		background: var(--decor-accent);
 	}
 
 	.collections-grid {

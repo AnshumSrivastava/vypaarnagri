@@ -2,12 +2,11 @@
 	import { base } from '$app/paths';
 	import { getAllCollections, getProductsByCategory } from '$lib/utils/data.js';
 	import CollectionCard from '$lib/components/CollectionCard.svelte';
-	import MasonryGrid from '$lib/components/MasonryGrid.svelte';
+	import ProductCard from '$lib/components/ProductCard.svelte';
 
 	let { data } = $props();
 
 	const product = $derived(data.product);
-	const isTech = $derived(product.category === 'tech');
 
 	let activeImageIndex = $state(0);
 
@@ -37,9 +36,9 @@
 </script>
 
 <svelte:head>
-	<title>{product.title} — VypaaNagri</title>
+	<title>{product.title} — VypaaDecor</title>
 	<meta name="description" content={product.description} />
-	<meta property="og:title" content="{product.title} — VypaaNagri" />
+	<meta property="og:title" content="{product.title} — VypaaDecor" />
 	<meta property="og:description" content={product.description} />
 	<meta property="og:image" content={product.images[0]} />
 	<meta property="og:type" content="product" />
@@ -48,13 +47,13 @@
 	<meta name="pinterest-rich-pin" content="true" />
 </svelte:head>
 
-<div class="product-page-container {isTech ? 'theme-tech' : 'theme-decor'}">
+<div class="product-page-container theme-decor animate-reveal">
 	<div class="container">
 		<!-- Breadcrumbs -->
 		<nav class="breadcrumb" aria-label="Breadcrumb">
 			<a href="{base}/" class="breadcrumb-link">Home</a>
 			<span class="breadcrumb-sep">›</span>
-			<a href="{base}/{product.category}" class="breadcrumb-link capitalize">{product.category}</a>
+			<a href="{base}/" class="breadcrumb-link capitalize">Decor</a>
 			<span class="breadcrumb-sep">›</span>
 			<span class="breadcrumb-current">{product.title}</span>
 		</nav>
@@ -130,7 +129,7 @@
 					<span class="tags-label">Tags:</span>
 					<div class="tags-list">
 						{#each product.tags as tag}
-							<a href="{base}/search?q={tag}" class="tag-chip">#{tag}</a>
+							<a href="{base}/?q={tag}" class="tag-chip">#{tag}</a>
 						{/each}
 					</div>
 				</div>
@@ -146,7 +145,7 @@
 				</div>
 				<div class="collections-grid">
 					{#each featuringCollections as collection}
-						<CollectionCard {collection} theme={product.category} />
+						<CollectionCard {collection} theme="decor" />
 					{/each}
 				</div>
 			</section>
@@ -156,10 +155,14 @@
 		{#if relatedProducts.length > 0}
 			<section class="related-section">
 				<div class="section-header">
-					<h2 class="section-title">More Curated Niche Finds</h2>
+					<h2 class="section-title">More Curated Finds</h2>
 					<div class="section-line"></div>
 				</div>
-				<MasonryGrid products={relatedProducts} theme={product.category} />
+				<div class="related-products-grid">
+					{#each relatedProducts as relatedProd}
+						<ProductCard product={relatedProd} theme="decor" />
+					{/each}
+				</div>
 			</section>
 		{/if}
 	</div>
@@ -169,6 +172,9 @@
 	.product-page-container {
 		min-height: 90vh;
 		padding: 3rem 0;
+		background: var(--decor-bg);
+		color: var(--decor-text);
+		font-family: var(--font-body);
 	}
 
 	.container {
@@ -180,19 +186,6 @@
 		gap: 2.5rem;
 	}
 
-	/* ── Themes ───────────────────────────── */
-	.theme-tech {
-		background: var(--tech-bg);
-		color: var(--tech-text);
-		font-family: var(--font-tech);
-	}
-
-	.theme-decor {
-		background: var(--decor-bg);
-		color: var(--decor-text);
-		font-family: var(--font-body);
-	}
-
 	/* ── Breadcrumb ───────────────────────── */
 	.breadcrumb {
 		display: flex;
@@ -200,10 +193,8 @@
 		flex-wrap: wrap;
 		gap: 0.375rem;
 		font-size: 0.8125rem;
+		color: var(--decor-muted);
 	}
-
-	.theme-tech .breadcrumb { color: #64748b; }
-	.theme-decor .breadcrumb { color: #9e8a7a; }
 
 	.breadcrumb-link {
 		color: inherit;
@@ -211,8 +202,7 @@
 		transition: color 0.2s ease;
 	}
 
-	.theme-tech .breadcrumb-link:hover { color: #a78bfa; }
-	.theme-decor .breadcrumb-link:hover { color: #c47741; }
+	.breadcrumb-link:hover { color: var(--decor-accent); }
 
 	.breadcrumb-sep {
 		opacity: 0.6;
@@ -220,9 +210,8 @@
 
 	.breadcrumb-current {
 		font-weight: 600;
+		color: var(--decor-text);
 	}
-	.theme-tech .breadcrumb-current { color: #e2e8f0; }
-	.theme-decor .breadcrumb-current { color: #3d2b1f; }
 
 	/* ── Product Grid Layout ──────────────── */
 	.product-grid {
@@ -248,19 +237,11 @@
 	.main-image-wrap {
 		width: 100%;
 		aspect-ratio: 4/3;
-		border-radius: 20px;
+		border-radius: var(--radius-card);
 		overflow: hidden;
-		background: rgba(0, 0, 0, 0.05);
-	}
-
-	.theme-tech .main-image-wrap {
-		border: 1px solid #1e1e2e;
-		box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
-	}
-
-	.theme-decor .main-image-wrap {
-		border: 1.5px solid #e8ddd2;
-		box-shadow: 0 10px 40px rgba(196, 119, 65, 0.06);
+		background: var(--decor-surface);
+		border: 1.5px solid var(--decor-border);
+		box-shadow: var(--shadow-card);
 	}
 
 	.main-img {
@@ -284,15 +265,12 @@
 		padding: 0;
 		background: none;
 		border: 2px solid transparent;
-		transition: all 0.2s ease;
+		transition: var(--transition);
 		flex-shrink: 0;
+		border-color: rgba(232, 221, 210, 0.8);
 	}
 
-	.theme-tech .thumb-btn { border-color: rgba(30, 30, 46, 0.8); }
-	.theme-decor .thumb-btn { border-color: rgba(232, 221, 210, 0.8); }
-
-	.theme-tech .thumb-btn.active { border-color: #7c3aed; }
-	.theme-decor .thumb-btn.active { border-color: #c47741; }
+	.thumb-btn.active { border-color: var(--decor-accent); }
 
 	.thumb-img {
 		width: 100%;
@@ -315,57 +293,35 @@
 		letter-spacing: 0.1em;
 		padding: 0.25rem 0.75rem;
 		border-radius: 999px;
-	}
-
-	.theme-tech .subcategory-badge {
-		background: rgba(124, 58, 237, 0.15);
-		color: #a78bfa;
-	}
-
-	.theme-decor .subcategory-badge {
 		background: rgba(196, 119, 65, 0.1);
-		color: #c47741;
+		color: var(--decor-accent);
 	}
 
 	.product-title {
-		font-size: clamp(1.75rem, 4vw, 2.5rem);
-		font-weight: 800;
-		line-height: 1.15;
-	}
-
-	.theme-tech .product-title {
-		color: #f8fafc;
-	}
-
-	.theme-decor .product-title {
 		font-family: var(--font-decor);
-		color: #3d2b1f;
+		font-size: clamp(1.75rem, 4vw, 2.5rem);
 		font-weight: 700;
+		line-height: 1.15;
+		color: var(--decor-text);
 	}
 
 	.product-price {
 		font-size: 1.5rem;
 		font-weight: 700;
+		color: var(--decor-accent);
 	}
-
-	.theme-tech .product-price { color: #a78bfa; }
-	.theme-decor .product-price { color: #c47741; }
 
 	.product-desc {
-		font-size: 0.9375rem;
+		font-size: 0.95rem;
 		line-height: 1.7;
+		color: var(--decor-muted);
 	}
-
-	.theme-tech .product-desc { color: #94a3b8; }
-	.theme-decor .product-desc { color: #5c4a3c; }
 
 	.divider {
 		height: 1px;
 		width: 100%;
+		background: var(--decor-border);
 	}
-
-	.theme-tech .divider { background: #1e1e2e; }
-	.theme-decor .divider { background: #e8ddd2; }
 
 	/* ── CTAs ─────────────────────────────── */
 	.product-ctas {
@@ -383,58 +339,33 @@
 		font-size: 0.875rem;
 		font-weight: 700;
 		padding: 0.75rem 1.5rem;
-		border-radius: 10px;
+		border-radius: var(--radius-btn);
 		text-decoration: none;
-		transition: all 0.25s ease;
+		transition: var(--transition);
 		min-width: 160px;
-	}
-
-	/* Tech Primary */
-	.theme-tech .cta-primary {
-		background: linear-gradient(135deg, #7c3aed, #6d28d9);
-		color: white;
-		box-shadow: 0 4px 16px rgba(124, 58, 237, 0.35);
-	}
-
-	.theme-tech .cta-primary:hover {
-		background: linear-gradient(135deg, #6d28d9, #5b21b6);
-		box-shadow: 0 6px 24px rgba(124, 58, 237, 0.55);
-		transform: translateY(-2px);
+		flex: 1;
 	}
 
 	/* Decor Primary */
-	.theme-decor .cta-primary {
-		background: linear-gradient(135deg, #c47741, #a86030);
+	.cta-primary {
+		background: linear-gradient(135deg, var(--decor-accent), #a86030);
 		color: white;
 		box-shadow: 0 4px 16px rgba(196, 119, 65, 0.35);
 	}
 
-	.theme-decor .cta-primary:hover {
-		background: linear-gradient(135deg, #a86030, #8f5228);
+	.cta-primary:hover {
 		box-shadow: 0 6px 24px rgba(196, 119, 65, 0.55);
 		transform: translateY(-2px);
 	}
 
-	/* Tech Secondary */
-	.theme-tech .cta-secondary {
-		background: rgba(124, 58, 237, 0.08);
-		color: #a78bfa;
-		border: 1px solid rgba(124, 58, 237, 0.25);
-	}
-
-	.theme-tech .cta-secondary:hover {
-		background: rgba(124, 58, 237, 0.16);
-		border-color: rgba(124, 58, 237, 0.6);
-	}
-
 	/* Decor Secondary */
-	.theme-decor .cta-secondary {
+	.cta-secondary {
 		background: rgba(196, 119, 65, 0.08);
-		color: #c47741;
+		color: var(--decor-accent);
 		border: 1px solid rgba(196, 119, 65, 0.25);
 	}
 
-	.theme-decor .cta-secondary:hover {
+	.cta-secondary:hover {
 		background: rgba(196, 119, 65, 0.16);
 		border-color: rgba(196, 119, 65, 0.6);
 	}
@@ -447,10 +378,8 @@
 	.affiliate-disclaimer {
 		font-size: 0.75rem;
 		line-height: 1.5;
+		color: var(--decor-muted);
 	}
-
-	.theme-tech .affiliate-disclaimer { color: #475569; }
-	.theme-decor .affiliate-disclaimer { color: #9e8a7a; }
 
 	/* ── Tags ─────────────────────────────── */
 	.product-tags {
@@ -464,10 +393,8 @@
 	.tags-label {
 		font-size: 0.8125rem;
 		font-weight: 600;
+		color: var(--decor-muted);
 	}
-
-	.theme-tech .tags-label { color: #475569; }
-	.theme-decor .tags-label { color: #9e8a7a; }
 
 	.tags-list {
 		display: flex;
@@ -481,26 +408,13 @@
 		padding: 0.2rem 0.75rem;
 		border-radius: 999px;
 		text-decoration: none;
-		transition: all 0.2s ease;
-	}
-
-	.theme-tech .tag-chip {
-		color: #7c3aed;
-		background: rgba(124, 58, 237, 0.1);
-		border: 1px solid rgba(124, 58, 237, 0.25);
-	}
-
-	.theme-tech .tag-chip:hover {
-		background: rgba(124, 58, 237, 0.2);
-	}
-
-	.theme-decor .tag-chip {
-		color: #c47741;
+		transition: var(--transition);
+		color: var(--decor-accent);
 		background: rgba(196, 119, 65, 0.1);
 		border: 1px solid rgba(196, 119, 65, 0.25);
 	}
 
-	.theme-decor .tag-chip:hover {
+	.tag-chip:hover {
 		background: rgba(196, 119, 65, 0.2);
 	}
 
@@ -518,32 +432,17 @@
 	}
 
 	.section-title {
+		font-family: var(--font-decor);
 		font-size: 1.5rem;
 		font-weight: 700;
-	}
-
-	.theme-tech .section-title {
-		font-family: var(--font-tech);
-		color: #e2e8f0;
-	}
-
-	.theme-decor .section-title {
-		font-family: var(--font-decor);
-		color: #3d2b1f;
+		color: var(--decor-text);
 	}
 
 	.section-line {
 		height: 3px;
 		width: 48px;
 		border-radius: 2px;
-	}
-
-	.theme-tech .section-line {
-		background: linear-gradient(90deg, #7c3aed, #06b6d4);
-	}
-
-	.theme-decor .section-line {
-		background: linear-gradient(90deg, #c47741, #7a9e7e);
+		background: var(--decor-accent);
 	}
 
 	.collections-grid {
@@ -562,5 +461,19 @@
 		.collections-grid {
 			grid-template-columns: repeat(3, 1fr);
 		}
+	}
+
+	.related-products-grid {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: 1.5rem;
+	}
+
+	@media (min-width: 500px) {
+		.related-products-grid { grid-template-columns: repeat(2, 1fr); }
+	}
+
+	@media (min-width: 1024px) {
+		.related-products-grid { grid-template-columns: repeat(4, 1fr); }
 	}
 </style>

@@ -5,15 +5,15 @@
 
 	const links = {
 		explore: [
-			{ href: `${base}/`, label: 'Home' },
-			{ href: `${base}/tech`, label: 'Tech Setups' },
-			{ href: `${base}/decor`, label: 'Home Decor' }
+			{ href: `${base}/`, label: 'Shop Decor' },
+			{ href: `${base}/blogs`, label: 'Design Blogs' },
+			{ href: `${base}/comparisons`, label: 'Buying Guides' }
 		],
 		collections: [
-			{ href: `${base}/collections/minimal-creator-setup`, label: 'Minimal Creator Setup' },
-			{ href: `${base}/collections/cozy-bedroom-sanctuary`, label: 'Cozy Bedroom' },
-			{ href: `${base}/collections/podcast-streaming-rig`, label: 'Podcast Rig' },
-			{ href: `${base}/collections/warm-living-room-vibes`, label: 'Warm Living Room' }
+			{ href: `${base}/collections/cozy-bedroom-sanctuary`, label: 'Cozy Bedroom Sanctuary' },
+			{ href: `${base}/collections/warm-living-room-vibes`, label: 'Warm Living Room Vibes' },
+			{ href: `${base}/collections/earthy-shelf-styling`, label: 'Earthy Shelf Styling' },
+			{ href: `${base}/collections/japandi-study-nook`, label: 'Japandi Study Nook' }
 		]
 	};
 </script>
@@ -23,14 +23,13 @@
 		<div class="footer-brand">
 			<a href="{base}/" class="footer-logo">
 				<span class="logo-icon">◈</span>
-				<span>Vypaa<span class="accent">Nagri</span></span>
+				<span>Vypaa<span class="accent">Decor</span></span>
 			</a>
 			<p class="footer-tagline">
-				Discover curated tech setups and home decor inspiration. Browse, explore, and get the look.
+				Curating spaces that help you slow down, breathe, and find calm. Discover premium Wabi-Sabi, Japandi, and cozy modern interior pieces.
 			</p>
 			<p class="footer-disclaimer">
-				* This site contains affiliate links. We may earn a commission if you purchase through our
-				links, at no extra cost to you.
+				* VypaaDecor is a visual curation portal. We feature handpicked collections with sponsored affiliate links. If you purchase through our links, we may earn a small commission at no additional cost to you.
 			</p>
 		</div>
 
@@ -44,7 +43,7 @@
 		</div>
 
 		<div class="footer-links-group">
-			<h3 class="footer-heading">Collections</h3>
+			<h3 class="footer-heading">Style Collections</h3>
 			<ul role="list">
 				{#each links.collections as link}
 					<li><a href={link.href} class="footer-link">{link.label}</a></li>
@@ -54,17 +53,18 @@
 	</div>
 
 	<div class="footer-bottom">
-		<p>© {currentYear} VypaaNagri. All rights reserved.</p>
-		<p>Made with ♥ for discovery enthusiasts.</p>
+		<p>© {currentYear} VypaaDecor. Crafted for intentional living and visual inspiration.</p>
+		<p>Curated with passion ✦</p>
 	</div>
 </footer>
 
 <style>
 	.footer {
-		background: #060609;
-		border-top: 1px solid rgba(30, 30, 46, 0.8);
+		background: var(--decor-surface);
+		border-top: 1px solid var(--decor-border);
 		margin-top: 6rem;
 		font-family: var(--font-body);
+		color: var(--decor-text);
 	}
 
 	.footer-inner {
@@ -88,44 +88,45 @@
 		display: inline-flex;
 		align-items: center;
 		gap: 0.5rem;
-		font-family: var(--font-tech);
-		font-size: 1.25rem;
+		font-family: var(--font-decor);
+		font-size: 1.35rem;
 		font-weight: 700;
-		color: #e2e8f0;
+		color: var(--decor-text);
 		text-decoration: none;
 		margin-bottom: 1rem;
 	}
 
 	.logo-icon {
-		color: #7c3aed;
+		color: var(--decor-accent);
 	}
 
 	.accent {
-		color: #7c3aed;
+		color: var(--decor-accent);
 	}
 
 	.footer-tagline {
 		font-size: 0.875rem;
-		color: #64748b;
+		color: var(--decor-muted);
 		line-height: 1.6;
-		max-width: 340px;
-		margin-bottom: 1rem;
+		max-width: 420px;
+		margin-bottom: 1.25rem;
 	}
 
 	.footer-disclaimer {
-		font-size: 0.75rem;
-		color: #475569;
+		font-size: 0.725rem;
+		color: var(--decor-muted);
 		line-height: 1.5;
-		max-width: 340px;
+		max-width: 440px;
+		opacity: 0.8;
 	}
 
 	.footer-heading {
 		font-size: 0.75rem;
-		font-weight: 600;
+		font-weight: 700;
 		text-transform: uppercase;
-		letter-spacing: 0.1em;
-		color: #475569;
-		margin-bottom: 1rem;
+		letter-spacing: 0.12em;
+		color: var(--decor-muted);
+		margin-bottom: 1.25rem;
 	}
 
 	.footer-links-group ul {
@@ -134,30 +135,31 @@
 		margin: 0;
 		display: flex;
 		flex-direction: column;
-		gap: 0.625rem;
+		gap: 0.75rem;
 	}
 
 	.footer-link {
 		font-size: 0.875rem;
-		color: #64748b;
+		color: var(--decor-muted);
 		text-decoration: none;
-		transition: color 0.2s ease;
+		transition: var(--transition);
 	}
 
 	.footer-link:hover {
-		color: #a78bfa;
+		color: var(--decor-accent);
+		padding-left: 0.15rem;
 	}
 
 	.footer-bottom {
 		max-width: 1400px;
 		margin: 0 auto;
-		padding: 1.25rem 1.5rem;
-		border-top: 1px solid rgba(30, 30, 46, 0.5);
+		padding: 1.5rem 1.5rem;
+		border-top: 1px solid rgba(232, 221, 210, 0.6);
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: space-between;
 		gap: 0.5rem;
 		font-size: 0.75rem;
-		color: #475569;
+		color: var(--decor-muted);
 	}
 </style>

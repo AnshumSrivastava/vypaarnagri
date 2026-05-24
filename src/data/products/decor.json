@@ -201,5 +201,113 @@
     "tags": ["wall-art", "canvas", "abstract", "wabi-sabi", "warm", "gallery"],
     "featured": true,
     "price": "$79"
+  },
+  {
+    "id": "travertine-side-table",
+    "title": "Travertine Stone Side Table",
+    "category": "decor",
+    "subcategory": "furniture",
+    "images": [
+      "https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=800&q=80",
+      "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=800&q=80"
+    ],
+    "description": "Natural travertine stone blocks with organic pitted details. Brutalist yet warm minimal design, absolute luxury.",
+    "affiliateLinks": [
+      { "label": "Lulu & Georgia", "url": "https://www.luluandgeorgia.com" },
+      { "label": "Amazon", "url": "https://www.amazon.com/s?k=travertine+stone+side+table" }
+    ],
+    "tags": ["table", "travertine", "stone", "minimal", "living-room", "brutalist"],
+    "featured": true,
+    "price": "$289"
+  },
+  {
+    "id": "boucle-accent-chair",
+    "title": "Bouclé Swivel Accent Chair",
+    "category": "decor",
+    "subcategory": "furniture",
+    "images": [
+      "https://images.unsplash.com/photo-1592078615290-033ee584e267?w=800&q=80",
+      "https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?w=800&q=80"
+    ],
+    "description": "Chunky cream bouclé upholstery with full 360-degree swivel. Incredibly comfortable, organic modern shape.",
+    "affiliateLinks": [
+      { "label": "Castlery", "url": "https://www.castlery.com" },
+      { "label": "Amazon", "url": "https://www.amazon.com/s?k=cream+boucle+swivel+chair" }
+    ],
+    "tags": ["chair", "boucle", "swivel", "cozy", "furniture", "living-room"],
+    "featured": true,
+    "price": "$499"
+  },
+  {
+    "id": "brass-arch-mirror",
+    "title": "Minimalist Brass Arch Mirror",
+    "category": "decor",
+    "subcategory": "decorative",
+    "images": [
+      "https://images.unsplash.com/photo-1618220179428-22790b461013?w=800&q=80",
+      "https://images.unsplash.com/photo-1617806118233-18e1db207f62?w=800&q=80"
+    ],
+    "description": "Slim, solid brass arched frame. Elevates hallway entryways, bedroom walls, or over-the-mantel styling.",
+    "affiliateLinks": [
+      { "label": "Amazon", "url": "https://www.amazon.com/s?k=brass+arched+wall+mirror+slim" },
+      { "label": "West Elm", "url": "https://www.westelm.com" }
+    ],
+    "tags": ["mirror", "brass", "arched", "entryway", "minimal", "metallic"],
+    "featured": false,
+    "price": "$129"
+  },
+  {
+    "id": "olive-branch-pot",
+    "title": "Faux Olive Branch in Rustic Pot",
+    "category": "decor",
+    "subcategory": "plants",
+    "images": [
+      "https://images.unsplash.com/photo-1533090161767-e6ffed986c88?w=800&q=80",
+      "https://images.unsplash.com/photo-1615485290382-441e4d049cb5?w=800&q=80"
+    ],
+    "description": "Ultra-realistic faux olive foliage pre-potted in a weathered terracotta clay pot. Zero maintenance organic vibe.",
+    "affiliateLinks": [
+      { "label": "Amazon", "url": "https://www.amazon.com/s?k=faux+olive+tree+rustic+pot" },
+      { "label": "Etsy", "url": "https://www.etsy.com/search?q=rustic+faux+olive+pot" }
+    ],
+    "tags": ["plants", "faux-plant", "olive", "terracotta", "rustic", "shelf"],
+    "featured": true,
+    "price": "$54"
+  },
+  {
+    "id": "wool-area-rug",
+    "title": "Handwoven Wool Area Rug",
+    "category": "decor",
+    "subcategory": "textiles",
+    "images": [
+      "https://images.unsplash.com/photo-1600121848594-d8644e57abab?w=800&q=80",
+      "https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?w=800&q=80"
+    ],
+    "description": "Un-dyed pure sheep wool woven into a raised diamond texture. Brings exceptional underfoot comfort and sound dampening.",
+    "affiliateLinks": [
+      { "label": "Lulu & Georgia", "url": "https://www.luluandgeorgia.com" },
+      { "label": "Amazon", "url": "https://www.amazon.com/s?k=handwoven+wool+area+rug+neutral" }
+    ],
+    "tags": ["rug", "wool", "handwoven", "textiles", "living-room", "neutral"],
+    "featured": true,
+    "price": "$389"
+  },
+  {
+    "id": "linen-bedspread",
+    "title": "Pure Woven Linen Bedspread",
+    "category": "decor",
+    "subcategory": "textiles",
+    "images": [
+      "https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?w=800&q=80",
+      "https://images.unsplash.com/photo-1540518614846-7eded433c457?w=800&q=80"
+    ],
+    "description": "Belgian flax pre-washed bedspread in natural clay. Soft, heavy drape, breathable and perfect for rustic layered bed styling.",
+    "affiliateLinks": [
+      { "label": "Amazon", "url": "https://www.amazon.com/s?k=belgian+flax+linen+quilt+bedspread" },
+      { "label": "Etsy", "url": "https://www.etsy.com/search?q=heavyweight+linen+bedspread" }
+    ],
+    "tags": ["bedspread", "linen", "bedroom", "cozy", "clay", "textiles"],
+    "featured": false,
+    "price": "$179"
   }
 ]

@@ -1,0 +1,70 @@
+[
+  {
+    "slug": "cozy-accent-chairs",
+    "title": "Earthy Accent Chairs: Cream Bouclé Swivel vs. Linen Slouch",
+    "description": "Looking for the ultimate statement armchair for your living room or study corner? We compare CASTLERY's Swivel Bouclé against Lulu & Georgia's Slouch Linen lounge chair on style, comfort, durability, and value.",
+    "coverImage": "https://images.unsplash.com/photo-1592078615290-033ee584e267?w=1200&q=80",
+    "metrics": ["Aesthetics", "Comfort", "Durability", "Value"],
+    "items": [
+      {
+        "name": "Cream Bouclé Swivel Chair",
+        "productId": "boucle-accent-chair",
+        "brand": "Castlery Co.",
+        "price": "$499",
+        "rating": 4.9,
+        "pros": ["Swivel base allows 360-degree rotation", "Incredibly cozy texture", "Thick high-density padding"],
+        "cons": ["Easily gathers dust", "Requires professional upholstery cleaner for stains"],
+        "scores": [5, 5, 4, 4],
+        "affiliateUrl": "https://www.amazon.com/s?k=cream+boucle+swivel+chair",
+        "imageUrl": "https://images.unsplash.com/photo-1592078615290-033ee584e267?w=600&q=80"
+      },
+      {
+        "name": "Stonewashed Linen Armchair",
+        "productId": "linen-bedspread",
+        "brand": "Lulu & Georgia",
+        "price": "$389",
+        "rating": 4.6,
+        "pros": ["Pre-washed heavy linen feels cool and breathable", "Slipcovers are fully removable and dry-cleanable", "Timeless relaxed Scandi-cozy profile"],
+        "cons": ["Linen is prone to micro-creasing", "Softer padding lacks stiff lumbar support"],
+        "scores": [4, 4, 5, 5],
+        "affiliateUrl": "https://www.amazon.com/s?k=linen+slouch+accent+chair+neutral",
+        "imageUrl": "https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?w=600&q=80"
+      }
+    ],
+    "verdict": "If your primary goal is luxurious, cozy comfort and a modern eye-catching shape, the Cream Bouclé Swivel is worth every penny. However, if you have pets or prefer a relaxed, slipcovered Scandi look that is easy to wash, the Stonewashed Linen is a smarter long-term investment."
+  },
+  {
+    "slug": "aesthetic-table-lamps",
+    "title": "Aesthetic Task Lamps: Travertine Stone vs. Arch Brass",
+    "description": "Task lighting doesn't have to look industrial. We put two stunning nightstand companions head-to-head to see which casts the best glow and carries the highest visual appeal.",
+    "coverImage": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=1200&q=80",
+    "metrics": ["Aesthetics", "Glow Quality", "Build Quality", "Affordability"],
+    "items": [
+      {
+        "name": "HEKTAR Plaster Lamp",
+        "productId": "minimal-desk-lamp",
+        "brand": "IKEA Design",
+        "price": "$39",
+        "rating": 4.7,
+        "pros": ["Extremely affordable", "Matte plaster-like finish", "Heavy non-slip base"],
+        "cons": ["Fixed bulb height", "Plaster can chip if dropped"],
+        "scores": [4, 5, 4, 5],
+        "affiliateUrl": "https://www.ikea.com/us/en/search/?q=desk+lamp",
+        "imageUrl": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&q=80"
+      },
+      {
+        "name": "Minimalist travertine Lamp",
+        "productId": "travertine-side-table",
+        "brand": "Anthropologie",
+        "price": "$189",
+        "rating": 4.8,
+        "pros": ["Exquisite solid honed travertine stone body", "Built-in rotary brass dimmer", "Stunning brutalist statement"],
+        "cons": ["Very heavy (12 lbs)", "High price point"],
+        "scores": [5, 4, 5, 3],
+        "affiliateUrl": "https://www.amazon.com/s?k=travertine+stone+table+lamp+brutalist",
+        "imageUrl": "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=600&q=80"
+      }
+    ],
+    "verdict": "The Anthropologie Honed Travertine Lamp is a masterpiece that doubles as a sculpture even when switched off. But if you are styling on a budget, the IKEA HEKTAR captures a similar matte minimal plaster feel for a fraction of the price."
+  }
+]

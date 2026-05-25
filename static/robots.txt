@@ -1,7 +1,7 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://vypaarnagri.com/sitemap.xml
+Sitemap: https://anshumsrivastava.github.io/vypaarnagri/sitemap.xml
 
 # Disallow admin/utility paths
 Disallow: /search

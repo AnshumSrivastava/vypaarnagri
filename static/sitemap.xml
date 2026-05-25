@@ -2,81 +2,108 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
 
-  <!-- Main Pages -->
+  <!-- Main Catalog Pages -->
   <url>
-    <loc>https://vypaarnagri.com/</loc>
-    <changefreq>weekly</changefreq>
+    <loc>https://anshumsrivastava.github.io/vypaarnagri/</loc>
+    <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://vypaarnagri.com/tech</loc>
+    <loc>https://anshumsrivastava.github.io/vypaarnagri/blogs</loc>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://vypaarnagri.com/decor</loc>
+    <loc>https://anshumsrivastava.github.io/vypaarnagri/comparisons</loc>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
 
-  <!-- Tech Collections -->
+  <!-- Curated Style Collections -->
   <url>
-    <loc>https://vypaarnagri.com/collections/minimal-creator-setup</loc>
-    <changefreq>monthly</changefreq>
+    <loc>https://anshumsrivastava.github.io/vypaarnagri/collections/cozy-bedroom-sanctuary</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=1200&amp;q=80</image:loc>
+      <image:title>Cozy Bedroom Sanctuary Collection</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://anshumsrivastava.github.io/vypaarnagri/collections/warm-living-room-vibes</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=1200&amp;q=80</image:loc>
+      <image:title>Warm Living Room Vibes Collection</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://anshumsrivastava.github.io/vypaarnagri/collections/earthy-shelf-styling</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?w=1200&amp;q=80</image:loc>
+      <image:title>Earthy Shelf Styling Collection</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://anshumsrivastava.github.io/vypaarnagri/collections/japandi-study-nook</loc>
+    <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
       <image:loc>https://images.unsplash.com/photo-1593642632559-0c6d3fc62b89?w=1200&amp;q=80</image:loc>
-      <image:title>Minimal Creator Setup</image:title>
+      <image:title>Japandi Study Nook Collection</image:title>
     </image:image>
-  </url>
-  <url>
-    <loc>https://vypaarnagri.com/collections/podcast-streaming-rig</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <image:image>
-      <image:loc>https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?w=1200&amp;q=80</image:loc>
-      <image:title>Podcast &amp; Streaming Rig</image:title>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://vypaarnagri.com/collections/ergonomic-productivity-desk</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://vypaarnagri.com/collections/4k-creative-workstation</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
   </url>
 
-  <!-- Decor Collections -->
+  <!-- Editorial Design Blogs -->
   <url>
-    <loc>https://vypaarnagri.com/collections/cozy-bedroom-sanctuary</loc>
+    <loc>https://anshumsrivastava.github.io/vypaarnagri/blogs/master-japandi-living-room</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
       <image:loc>https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=1200&amp;q=80</image:loc>
-      <image:title>Cozy Bedroom Sanctuary</image:title>
+      <image:title>How to Master the Japandi Aesthetic in Your Living Room</image:title>
     </image:image>
   </url>
   <url>
-    <loc>https://vypaarnagri.com/collections/warm-living-room-vibes</loc>
+    <loc>https://anshumsrivastava.github.io/vypaarnagri/blogs/wabi-sabi-styling-guide</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=1200&amp;q=80</image:loc>
-      <image:title>Warm Living Room Vibes</image:title>
+      <image:loc>https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?w=1200&amp;q=80</image:loc>
+      <image:title>The Art of Wabi-Sabi: Styling with Imperfect Details</image:title>
     </image:image>
   </url>
   <url>
-    <loc>https://vypaarnagri.com/collections/earthy-shelf-styling</loc>
+    <loc>https://anshumsrivastava.github.io/vypaarnagri/blogs/cozy-bedroom-lighting-ideas</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1540932239986-30128078f3c5?w=1200&amp;q=80</image:loc>
+      <image:title>5 Lighting Rules for a Calm and Cozy Bedroom Retreat</image:title>
+    </image:image>
+  </url>
+
+  <!-- Buying Guides & Head-to-Head Comparisons -->
+  <url>
+    <loc>https://anshumsrivastava.github.io/vypaarnagri/comparisons/cozy-accent-chairs</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1592078615290-033ee584e267?w=1200&amp;q=80</image:loc>
+      <image:title>Earthy Accent Chairs: Cream Bouclé Swivel vs. Linen Slouch</image:title>
+    </image:image>
   </url>
   <url>
-    <loc>https://vypaarnagri.com/collections/boho-gallery-wall</loc>
+    <loc>https://anshumsrivastava.github.io/vypaarnagri/comparisons/aesthetic-table-lamps</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=1200&amp;q=80</image:loc>
+      <image:title>Aesthetic Task Lamps: Travertine Stone vs. Arch Brass</image:title>
+    </image:image>
   </url>
 
 </urlset>
